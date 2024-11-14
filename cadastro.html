@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Safe</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="/script.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Página Principal</a>
+            <a class="cabecalho__menu__link" href="map.html">Mapa de Desfibriladores</a>
+        </nav>
+    </header>
+
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">Cadastro</h1>
+            <p class="apresentacao__conteudo__texto">Para que a Heart Safe seja uma ferramenta eficaz e alcance seu verdadeiro potencial, contamos com a contribuição da sociedade no cadastro dos desfibriladores disponíveis em locais públicos e privados. <strong><font color="#F11926">Quanto mais pontos de desfibriladores forem registrados em nossa plataforma, maior será a chance de salvar vidas.</font></strong> O cadastro colaborativo garante que a rede de desfibriladores esteja sempre atualizada e acessível a todos, ampliando o alcance do nosso serviço e fortalecendo a nossa missão de proteção à vida.
+
+                A participação ativa da comunidade é essencial. Com a ajuda de todos, conseguimos mapear os locais onde os desfibriladores estão disponíveis, garantindo que eles possam ser encontrados rapidamente em situações críticas.</p>
+
+            <form id="cadastroForm">
+                <div>
+                    <label for="nome" class="apresentacao__links__subtitulo">Nome do desfibrilador:</label>
+                    <input type="text" id="" name="nome" required placeholder="Nome do Local onde fica o desfibrilador">
+                </div>
+                <div>
+                    <label for="rua" class="apresentacao__links__subtitulo">Rua:</label>
+                    <input type="text" id="" name="rua" required placeholder=" Ex: Rua A">
+                </div>
+                <div class="cadastroForm__cidadeNumero">
+                    <div class="casdastroForm__classnumero">
+                        <label for="numero" class="apresentacao__links__subtitulo___cadastro">Número:</label>
+                        <input type="number" id="cadastroForm__numero" name="numero" required placeholder="Ex: 100">
+                    </div>
+                    <div>
+                        <label for="cidade" class="apresentacao__links__subtitulo___cadastro">Cidade:</label>
+                        <input type="text" id="cadastroForm__cidade" name="cidade" required placeholder="Ex: Montes Claros MG">
+                    </div>
+                </div>
+                <div>
+                    <label for="latitude" class="apresentacao__links__subtitulo">Latitude:</label>
+                    <input type="text" id="" name="latitude" required placeholder=" Ex: -43.884298342922605">
+                </div>
+                <div>
+                    <label for="longitude" class="apresentacao__links__subtitulo">Longitude:</label>
+                    <input type="text" id="" name="longitude" required placeholder="Ex: -16.748972536839318">
+                </div>
+                <div>
+                    <label for="informacoes" class="apresentacao__links__subtitulo">Informações adicionais:</label>
+                    <textarea  id="cadastroForm__textArea" cols="10" rows="5" placeholder="Adicione informações que podem ser úteis para achar o desfibrilador mais rápido!"></textarea>
+                </div>
+                <button onclick="cadastrarDesfibrilador()">Cadastrar</button>
+
+                <p id="mensagem" class="apresentacao__links__subtitulo"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p class="rodape">Desenvolvido por Heart Safe</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Safe</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Página Principal</a>
+            <a class="cabecalho__menu__link" href="cadastro.html">Cadastro de Desfibriladores</a>
+        </nav>
+    </header>
+    <main class="apresentacao__mapa">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">Desfibriladores</h1>
+            <p class="apresentacao__conteudo__texto">A Heart Safe é uma plataforma essencial para salvar vidas em
+                emergências cardíacas. A rapidez com que um desfibrilador é encontrado e utilizado pode ser a diferença
+                entre a vida e a morte em casos de parada cardíaca. Nosso site oferece a localização dos desfibriladores
+                mais próximos, permitindo que as pessoas ajam rapidamente em situações de emergência, enquanto aguardam
+                a chegada de socorro médico. Dessa forma, a Heart Safe contribui diretamente para reduzir o tempo de
+                resposta e aumentar as chances de sobrevivência das vítimas.</p>
+            <section class="apresentacao__mapa__exibir">
+                <div id="map"></div>
+            </section>
+            <section>
+                <div id="desfibriladores-lista">
+                    <table id="desfibriladores-tabela">
+                        <thead class="desfibriladores_tabela__titulos">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Cidade</th>
+                                <th>Bairro</th>
+                                <th>Rua</th>
+                                <th>Número</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ESF Centro</td>
+                                <td>Montes Claros</td>
+                                <td>Centro</td>
+                                <td>Rua Gabriel Passos</td>
+                                <td>53</td>
+                                <td>-43.87047340348776</td>
+                                <td>-16.722384856963323</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Alcides Rabelo</td>
+                                <td>Montes Claros</td>
+                                <td>Alcides Rabelo</td>
+                                <td>R. Geovane Fagundes de Souza</td>
+                                <td>199</td>
+                                <td>-43.84284344766387</td>
+                                <td>-16.706938344920705</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Maracanã</td>
+                                <td>Montes Claros</td>
+                                <td>Maracanã</td>
+                                <td>Av. Brasília</td>
+                                <td>724</td>
+                                <td>-43.86547617793306</td>
+                                <td>-16.760797455264008</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Acácias</td>
+                                <td>Montes Claros</td>
+                                <td>Acácias</td>
+                                <td>Al. Quita Guimarães</td>
+                                <td>105</td>
+                                <td>-43.82205775931207</td>
+                                <td>-16.72393210858946</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Marfim</td>
+                                <td>Montes Claros</td>
+                                <td>Morada do Parque</td>
+                                <td>Professor João Câmara</td>
+                                <td>111</td>
+                                <td>-43.88501041721061</td>
+                                <td>-16.76140062894282</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Miralta</td>
+                                <td>Montes Claros</td>
+                                <td>Zona Rural</td>
+                                <td>Capitão Eugênio</td>
+                                <td>S/N</td>
+                                <td>-43.90475654763429</td>
+                                <td>-16.53129220397155</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Alto São João</td>
+                                <td>Montes Claros</td>
+                                <td>Alto São João</td>
+                                <td>R. João Teixeira Bastos</td>
+                                <td>114</td>
+                                <td>-43.85688298999357</td>
+                                <td>-16.713220747592203</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Monte Carmelo</td>
+                                <td>Montes Claros</td>
+                                <td>Monte Carmelo II</td>
+                                <td>Platina</td>
+                                <td>22</td>
+                                <td>-43.84073573079211</td>
+                                <td>-16.725150203885043</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Antônio Pimenta</td>
+                                <td>Montes Claros</td>
+                                <td>Antônio Pimenta</td>
+                                <td>R. Rosa Mendes Ferreira</td>
+                                <td>336</td>
+                                <td>-43.85489171453124</td>
+                                <td>-16.744154914330938</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Monte Sião</td>
+                                <td>Montes Claros</td>
+                                <td>Monte Sião</td>
+                                <td>Rua E</td>
+                                <td>29</td>
+                                <td>-43.84009673402383</td>
+                                <td>-16.671276438328448</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Morrinhos</td>
+                                <td>Montes Claros</td>
+                                <td>Morrinhos</td>
+                                <td>Melo Viana</td>
+                                <td>550</td>
+                                <td>-43.863956946841995</td>
+                                <td>-16.73286794580235</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Aparecida do Mundo Novo</td>
+                                <td>Montes Claros</td>
+                                <td>Aparecida do Mundo Novo</td>
+                                <td>R. Montes Claros</td>
+                                <td>S/N</td>
+                                <td>-43.926549180203686</td>
+                                <td>-16.11521536002897</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Nova Esperança</td>
+                                <td>Montes Claros</td>
+                                <td>Nova Esperança</td>
+                                <td>Av. Joaquim de Abreu</td>
+                                <td>245</td>
+                                <td>-43.937767513490996</td>
+                                <td>-16.5828196589527</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Bela Paisagem</td>
+                                <td>Montes Claros</td>
+                                <td>Santos Reis</td>
+                                <td>R. Geraldino Machado</td>
+                                <td>946</td>
+                                <td>-43.8724102611586</td>
+                                <td>-16.696439336454564</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Nova Suíça</td>
+                                <td>Montes Claros</td>
+                                <td>Nova Suíça</td>
+                                <td>Itália</td>
+                                <td>1055</td>
+                                <td>-43.809578903331804</td>
+                                <td>-16.723771033411193</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Novo Delfino</td>
+                                <td>Montes Claros</td>
+                                <td>Novo Delfino</td>
+                                <td>Rua 35</td>
+                                <td>39</td>
+                                <td>-43.83039357099879</td>
+                                <td>-16.738802382141493</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Bela Vista</td>
+                                <td>Montes Claros</td>
+                                <td>Vila Atlantida</td>
+                                <td>R. Quincas Souto</td>
+                                <td>1420</td>
+                                <td>-43.877786059312555</td>
+                                <td>-16.702672436811742</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Pérola</td>
+                                <td>Montes Claros</td>
+                                <td>Todos os Santos</td>
+                                <td>Santa Lúcia</td>
+                                <td>471</td>
+                                <td>-43.87355983216842</td>
+                                <td>-16.719131028915378</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Planalto</td>
+                                <td>Montes Claros</td>
+                                <td>Planalto</td>
+                                <td>Divíno Espírito Santo</td>
+                                <td>389</td>
+                                <td>-43.83578446751742</td>
+                                <td>-16.694885980124944</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Planalto II</td>
+                                <td>Montes Claros</td>
+                                <td>Planalto</td>
+                                <td>Rua Dois</td>
+                                <td>150B</td>
+                                <td>-43.84029088799025</td>
+                                <td>-16.69564577669369</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Recanto das Águas</td>
+                                <td>Montes Claros</td>
+                                <td>São Lucas</td>
+                                <td>Rua H</td>
+                                <td>32</td>
+                                <td>-43.83055208984213</td>
+                                <td>-16.670061137284932</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Planalto Rural</td>
+                                <td>Montes Claros</td>
+                                <td>Zona Rural</td>
+                                <td>BR 135, KM 384</td>
+                                <td></td>
+                                <td>-43.8680347516512</td>
+                                <td>-16.89580092030823</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Campos Eliseos</td>
+                                <td>Montes Claros</td>
+                                <td>Jardim Alegre (Facela)</td>
+                                <td>Rua F</td>
+                                <td>590</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ESF Renascença</td>
+                                <td>Montes Claros</td>
+                                <td>Renascença</td>
+                                <td>Av. Bio Lopes</td>
+                                <td>1272</td>
+                                <td>-43.85164009962359</td>
+                                <td>-16.698506790906904</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Canto do Engenho</td>
+                                <td>Montes Claros</td>
+                                <td>São Geraldo II</td>
+                                <td>R. Eurico Leite Fonseca</td>
+                                <td>181</td>
+                                <td>-43.882811974651084</td>
+                                <td>-16.795475704946647</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Carmelo</td>
+                                <td>Montes Claros</td>
+                                <td>Carmelo</td>
+                                <td>R. Lagoa Carajás</td>
+                                <td>500</td>
+                                <td>-43.82848230341349</td>
+                                <td>-16.721646786784227</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Carmelo II</td>
+                                <td>Montes Claros</td>
+                                <td>Carmelo</td>
+                                <td>R. Lagoa do Abaeté</td>
+                                <td>101</td>
+                                <td>43.831545459533565</td>
+                                <td>-16.720204748641933</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Samambaia</td>
+                                <td>Montes Claros</td>
+                                <td>Vila Nova de Minas</td>
+                                <td>Av. Montes Claros</td>
+                                <td>58</td>
+                                <td>-43.84593837294826</td>
+                                <td>-16.77777014942447</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Chiquinho Guimarães</td>
+                                <td>Montes Claros</td>
+                                <td>São Geraldo</td>
+                                <td>R. Pirajuí</td>
+                                <td>118</td>
+                                <td>-43.87623341882792</td>
+                                <td>-16.75293044750174</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Santa Bárbara</td>
+                                <td>Montes Claros</td>
+                                <td>Santa Bárbara</td>
+                                <td>BR 365, KM 10</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ESF Santa Lúcia I</td>
+                                <td>Montes Claros</td>
+                                <td>Santa Lúcia</td>
+                                <td>Olivina</td>
+                                <td>240</td>
+                                <td>-43.810577119933264</td>
+                                <td>-16.60047222723481</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Cidade Cristo Rei</td>
+                                <td>Montes Claros</td>
+                                <td>Alto São João</td>
+                                <td>R. Juiz de Fora</td>
+                                <td>115</td>
+                                <td>-43.852073056249026</td>
+                                <td>-16.71670677542692</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Santa Rafaela</td>
+                                <td>Montes Claros</td>
+                                <td>Santa Rafaela</td>
+                                <td>Vicente Silva</td>
+                                <td>160</td>
+                                <td>-43.851088516821875</td>
+                                <td>-16.766914502570145</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Cidade Industrial</td>
+                                <td>Montes Claros</td>
+                                <td>Cidade Industrial</td>
+                                <td>R. Quarenta e Três</td>
+                                <td>210</td>
+                                <td>-43.85433173232435</td>
+                                <td>-16.668997204251085</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Cintra</td>
+                                <td>Montes Claros</td>
+                                <td>Santa Rita I</td>
+                                <td>R. Monte Plano</td>
+                                <td>892</td>
+                                <td>-43.85263588486187</td>
+                                <td>-16.732857462253246</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Santa Rosa de Lima</td>
+                                <td>Montes Claros</td>
+                                <td>Santa Rosa de Lima</td>
+                                <td>Praça Bom Jesus</td>
+                                <td>S/N</td>
+                                <td>-43.94464183069067</td>
+                                <td>-16.29849980837512</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Santo Antônio I</td>
+                                <td>Montes Claros</td>
+                                <td>Delfino Magalhães</td>
+                                <td>Av. Olímpio Magalhães</td>
+                                <td>756</td>
+                                <td>-43.83871127449513</td>
+                                <td>-16.74236182158399</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Cintra I e II</td>
+                                <td>Montes Claros</td>
+                                <td>Cintra</td>
+                                <td>R. Cônego Marcos</td>
+                                <td>744</td>
+                                <td>-43.84773397688929</td>
+                                <td>-16.73105640228979</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Conjunto Vitória</td>
+                                <td>Montes Claros</td>
+                                <td>Conjunto Vitória II</td>
+                                <td>R. Dezessete</td>
+                                <td>350</td>
+                                <td>-43.83877774581695</td>
+                                <td>-16.751718066427514</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Delfino Magalhães</td>
+                                <td>Montes Claros</td>
+                                <td>Delfino Magalhães</td>
+                                <td>Av. Neco Delfino</td>
+                                <td>253</td>
+                                <td>-43.83834864228815</td>
+                                <td>-16.736946449292763</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Santo Antônio II</td>
+                                <td>Montes Claros</td>
+                                <td>Santo Antônio II</td>
+                                <td>Raimundo Wanderlei</td>
+                                <td>42</td>
+                                <td>-43.843505568744824</td>
+                                <td>-16.746124673988383</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Santos Reis</td>
+                                <td>Montes Claros</td>
+                                <td>Santos Reis</td>
+                                <td>Marcos Ribeiro</td>
+                                <td>167</td>
+                                <td>-43.870143974495946</td>
+                                <td>-16.70082480613001</td>
+                            </tr>
+                            <tr>
+                                <td>ESF São Geraldo II</td>
+                                <td>Montes Claros</td>
+                                <td>São Geraldo II</td>
+                                <td>Av. Aparecida Bispo</td>
+                                <td>30</td>
+                                <td>-43.884298342922605</td>
+                                <td>-16.79394277995399</td>
+                            </tr>
+                            <tr>
+                                <td>ESF São Judas</td>
+                                <td>Montes Claros</td>
+                                <td>São Judas</td>
+                                <td>Padre Vieira</td>
+                                <td>620</td>
+                                <td>-43.858809876349476</td>
+                                <td>-16.748972536839318</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Tancredo Neves</td>
+                                <td>Montes Claros</td>
+                                <td>Tancredo Neves</td>
+                                <td>Rua Dois</td>
+                                <td>206</td>
+                                <td>-43.85159900333236</td>
+                                <td>-16.69999543932125</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Eldorado I</td>
+                                <td>Montes Claros</td>
+                                <td>Jardim Eldorado</td>
+                                <td>R. N</td>
+                                <td>372</td>
+                                <td>-43.87866020336684</td>
+                                <td>-16.685507274657624</td>
+                            </tr>
+                            <tr>
+                                <td>ESF Topázio</td>
+                                <td>Montes Claros</td>
+                                <td>Santo Amaro</td>
+                                <td>Rua 33</td>
+                                <td>191</td>
+                                <td>-43.85022811511119</td>
+                                <td>-16.771393927774515</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+    </main>
+    <footer>
+        <p class="rodape">Desenvolvido por Heart Safe</p>
+    </footer>
+    <script src="script.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQJSUtBYA_7rTob2zclsBOWzzQ_mJdqAE&callback=initMap">
+</script>
+</body>
+
+</html>

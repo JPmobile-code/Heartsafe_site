@@ -1,0 +1,282 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#map * { 
+    max-width: none;
+    max-height: none; 
+    }
+
+:root{
+    --cor-primaria: #FFF5E1;
+    --cor-secundaria: #0C1844;
+    --cor-terciaria: #F11926;
+    --cor-hover: #D11722;
+
+    --texto-primario: "Montserrat", sans-serif;
+    --texto-secundario: "Krona One", sans-serif;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 17%;
+}
+.cabecalho__menu{
+    display: flex;
+    gap: 85px;
+}
+.cabecalho__menu__link{
+    font-size: 1.5rem;
+    font-family: var(--texto-secundario);
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+.cabecalho__menu__link:hover{
+    color: var(--cor-terciaria)
+    
+}
+
+
+.apresentacao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 15%;
+}
+
+.apresentacao__conteudo_principal{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 3%;
+}
+.apresentacao__conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 3% 3% 0 3%;
+}
+.apresentacao__mapa{
+    padding:  5% 15%;
+}
+
+.apresentacao__mapa__exibir{
+    margin-bottom: 10%;
+
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem;
+    font-family: var(--texto-secundario);
+}
+
+.apresentacao__conteudo__texto{
+    font-size: 1.5rem;
+    font-family: var(--texto-primario);
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--texto-secundario);
+    font-weight: 400;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.apresentacao__links__subtitulo___cadastro{
+    font-family: var(--texto-secundario);
+    font-weight: 400;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+
+.apresentacao__prova{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    gap: 32px;
+
+}
+
+.apresentacao__links__menu{
+    border: 2px solid var(--cor-terciaria);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 21.5px 0px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--texto-primario);
+    font-weight: 600;
+    
+
+}
+
+.apresentacao__links__menu:hover{
+    background: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+
+#map{
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+}
+.gm-style-mtc{
+    margin: 10px;
+}
+.gm-style button {
+    height: 25px; 
+    width: 120px;
+    border-radius: 1px;
+}
+
+
+
+
+input {
+    padding: 8px;
+    font-size: 1rem;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-style: none;
+    border: 2px solid var(--cor-secundaria);
+    width: 50%;
+}
+.cadastroForm__cidadeNumero{
+    display: flex;
+    flex-direction: row;
+}
+.casdastroForm__classnumero{
+    width:22%;
+}
+#cadastroForm__numero{
+    width: 57%;
+}
+#cadastroForm__cidade{
+    width: 260px;
+}
+
+#cadastroForm__textArea{
+    padding: 8px;
+    font-size: 1rem;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-style: none;
+    border: 2px solid var(--cor-secundaria);
+    width: 50%;
+}
+
+#informacoes{
+    padding-left: 8px;
+    font-size: 1rem;
+    margin: 10px 0 30px;
+    border-radius: 8px;
+    border-style: none;
+    border: 2px solid var(--cor-secundaria);
+    width: 50%; 
+    height: 100px;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: var(--cor-terciaria);
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: Bold;
+    width: 51.56%;
+}
+
+button:hover {
+    background-color: var(--cor-hover);
+}
+
+
+.rodape{
+
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding: 24px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--texto-primario);
+    font-weight: 400;
+
+}
+.desfibriladores_tabela__titulos{
+    font-size: 1.5rem;
+}
+
+
+#desfibriladores-lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor-secundaria);
+}
+
+#desfibriladores-tabela{
+    width: 100%;
+}
+
+#desfibriladores-tabela td{
+    border: var(--cor-secundaria) solid 2px;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+@media(max-width: 1300px){
+
+    .cabecalho{
+        padding: 10%;
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+    }
+
+    .apresentacao__conteudo{
+        width: auto;
+    }
+
+
+}
